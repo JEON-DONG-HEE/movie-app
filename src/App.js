@@ -1,10 +1,10 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./routes/Home";
 import Detail from "./routes/Detail";
 
 function App() {
   return (
-    <Router basename="/movie-app">
+    <Router>
       <Routes>
         <Route path="/hello" element={<h1>헬로우</h1>} />
         <Route path="/movie/:id" element={<Detail />} />
