@@ -4,7 +4,7 @@ import Detail from "./routes/Detail";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/movie-app">
       <Routes>
         <Route path="/hello" element={<h1>헬로우</h1>} />
         <Route path="/movie/:id" element={<Detail />} />
