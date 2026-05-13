@@ -41,7 +41,7 @@ function Detail() {
                   className="px-[10px] py-[4px] text-[#fff] rounded-xl mr-[5px] bg-[#50d71e]"
                   key={g}
                 >
-                  {g}
+                  {g}...
                 </li>
               ))}
             </ul>
