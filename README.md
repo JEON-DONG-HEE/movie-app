@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+## GA4 이벤트 태깅 실습
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React 무비앱에 GA4 이벤트 태깅을 실습했습니다.
 
-## Available Scripts
+공통 GA 이벤트 전송 함수를 만들고, 영화 카드 클릭, 상세 페이지 조회, 뒤로가기 버튼 클릭 같은 사용자 행동을 이벤트명과 파라미터로 분리해서 전송하는 구조를 구현했습니다.
 
-In the project directory, you can run:
+API 데이터가 로딩되기 전에는 상세 페이지 데이터가 `null` 상태이기 때문에, 상세 조회 이벤트는 데이터 로딩 완료 후 `useEffect`에서 전송되도록 처리했습니다.
 
-### `npm start`
+개발 환경에서는 GA 이벤트 전송 여부를 확인할 수 있도록 콘솔 메시지를 출력하도록 구성했습니다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 적용한 GA4 이벤트 예시
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- 영화 카드 클릭
+- 영화 상세 페이지 조회
+- 상세 페이지 뒤로가기 버튼 클릭
 
-### `npm test`
+### 구현 포인트
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- 공통 GA 이벤트 전송 함수 분리
+- 이벤트명과 파라미터 분리
+- API 로딩 이후 상세 조회 이벤트 전송
+- 개발 확인용 콘솔 메시지 출력
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 스타일링 방식
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+이번 프로젝트에서는 두 가지 스타일링 방식을 함께 사용했습니다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+목록 페이지는 일반 CSS Module을 활용해 레이아웃과 카드 UI를 구성했고, 상세 페이지는 Tailwind CSS를 적용해 JSX 내부에서 빠르게 UI 스타일을 조정하는 방식으로 구현했습니다.
 
-### `npm run eject`
+이를 통해 기존 CSS 방식과 Tailwind CSS 방식의 차이를 비교하며 React 환경에서의 스타일링 방식을 실습했습니다.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 적용 방식
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- 목록 페이지: CSS Module 기반 스타일링
+- 상세 페이지: Tailwind CSS 기반 스타일링
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 사용 기술
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- React
+- TypeScript
+- React Router
+- CSS Module
+- Tailwind CSS
+- GA4 Event Tagging
+- API Fetch
+- Git / GitHub
